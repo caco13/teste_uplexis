@@ -1,0 +1,19 @@
+body {
+    font-family: 'Lato';
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    color: #2e6da4;
+}
+
+.fa-btn {
+    margin-right: 6px;
+}
+
+.button-right {
+    float: right;
+}
