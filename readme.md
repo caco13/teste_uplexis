@@ -1,12 +1,12 @@
 # Sistema de busca de CNPJ no Sintegra Espírito Santo v. 0.1
 
-Desenvolvido com Laravel 5.2 (ver readme_laravel.md)
+Desenvolvido com Laravel 5.2 (ver [readme_laravel.md](https://github.com/caco13/teste_uplexis/blob/master/readme_laravel.md))
 
-- Requisitos
+Requisitos
 
-php 5.5.9
+- php 5.5.9
 
-mysql 5.5.50
+- mysql 5.5.50
 
-Laravel 5.2
+- Laravel 5.2
 
