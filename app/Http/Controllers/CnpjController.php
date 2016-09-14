@@ -77,6 +77,8 @@ class CnpjController extends Controller
     /**
      * Get data from Sintegra ES webservice.
      *
+     * Based on https://github.com/mcrhre/Sintegra/blob/master/sintegra_es/index.php
+     *
      * @param $cnpj
      * @return mixed
      */
@@ -102,6 +104,8 @@ class CnpjController extends Controller
 
     /**
      * Build Json with CNPJ data from Sintegra ES html page.
+     *
+     * Based on https://github.com/mcrhre/Sintegra/blob/master/sintegra_es/index.php
      *
      * @param $html
      * @return string
