@@ -114,12 +114,12 @@ class CnpjController extends Controller
 
         $html = $matches[0][0];
 
-        //IDENTIFICAÇÃO - PESSOA JURÍDICA
+        // Identificação - pessoa jurídica
         $re = "/<table width=\"100%\" border=\"0\" cellspacing=\"[12]\" cellpadding=\"[12]\">[^>]*>(.*?)<\\/table>/si";
 
         preg_match_all($re, $html, $identificacao);
 
-        //VERIFICA SE CNPJ EXISTE NO SINTEGRA ES
+        // Verifica se CNPJ existe no Sintegra ES
         if (empty($identificacao[0][0])) {
             return null;
         }
@@ -130,14 +130,14 @@ class CnpjController extends Controller
 
         $valores_identificacao = str_replace('&nbsp;','', array_map("strip_tags", $valores[0]));
 
-        // Array identidade
+        // "Array identidade"
         $identidade = [
             'cnpj' => $valores_identificacao[0],
             'inscricao_estadual' => $valores_identificacao[1],
             'razao_social' => $valores_identificacao[2]
         ];
 
-        //ENDEREÇO
+        // "Endereço"
         $re = "/<td (class=\"valor\"|width=\"30%\")[^>]*>(.*?)<\\/td>/si";
 
         preg_match_all($re, $identificacao[0][1], $valores);
@@ -156,7 +156,7 @@ class CnpjController extends Controller
             'telefone' => $valores_endereco[7]
         ];
 
-        //INFORMAÇÕES COMPLEMENTARES
+        // "Informações complementares"
         $re = "/<td class=\"valor\"[^>]*>(.*?)<\\/td>/si";
 
         preg_match_all($re, $identificacao[0][2], $valores);
@@ -181,7 +181,7 @@ class CnpjController extends Controller
             'emitente_nfe_desde' => $valores_infs_complementares3[0]
         ];
 
-        //MONTA JSON
+        // Create array with cnpj data
         $dataCnpj = ['identidade' => $identidade,
             'endereco' => $endereco,
             'info_complementares' => $info_complementares
